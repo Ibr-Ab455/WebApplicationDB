@@ -8,7 +8,7 @@
     
 </head>
 <body>
-    <form id="form1" runat="server">
+    <form id="form1" runat="server"> 
 
         <asp:Button ID="ButtonSearchLastName" runat="server" Text="søk" OnClick="ButtonSearchLastName_Click" />
           <br />
