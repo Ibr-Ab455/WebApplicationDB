@@ -12,6 +12,8 @@ namespace WebApplicationDB
 {
     public partial class WebForm1 : System.Web.UI.Page
     {
+        public object TextBoxFirstName { get; private set; }
+
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -49,7 +51,7 @@ namespace WebApplicationDB
                 cmd.CommandType = CommandType.Text;
 
                 param=new SqlParameter("@lastName",SqlDbType.NChar);
-                param.Value=TextBoxLastName.Text;
+                param.Value = TextBoxSearch.Text;
                 cmd.Parameters.Add(param);
 
 
@@ -61,6 +63,39 @@ namespace WebApplicationDB
                 reader.Close();
                 conn.Close();
             }
+
         }
+
+        protected void ButtonSearchFirstName_Click(object sender, EventArgs e)
+        {
+            DataTable dt = new DataTable();
+            SqlParameter param;
+            var connectionString = ConfigurationManager.ConnectionStrings["ConnCms"].ConnectionString;
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+
+                SqlCommand cmd = new SqlCommand("SELECT * from person where Fornavn=@FirstName", conn);
+                cmd.CommandType = CommandType.Text;
+
+                param = new SqlParameter("@FirstName", SqlDbType.NChar);
+                param.Value = TextBoxSearch.Text;
+                cmd.Parameters.Add(param);
+
+
+                SqlDataReader reader = cmd.ExecuteReader();
+                dt.Load(reader);
+                GridView1.DataSource = dt;
+                GridView1.DataBind();
+
+                reader.Close();
+                conn.Close();
+            }
+
+        }
+
     }
+
+
 }

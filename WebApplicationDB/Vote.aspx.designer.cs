@@ -11,7 +11,7 @@ namespace WebApplicationDB
 {
 
 
-    public partial class WebForm1
+    public partial class Vote
     {
 
         /// <summary>
@@ -24,39 +24,21 @@ namespace WebApplicationDB
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// ButtonSearchLastName control.
+        /// DropDownListParti control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonSearchLastName;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownListParti;
 
         /// <summary>
-        /// ButtonSearchFirstName control.
+        /// ButtonVote control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonSearchFirstName;
-
-        /// <summary>
-        /// TextBoxSearch control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxSearch;
-
-        /// <summary>
-        /// GridView1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView1;
+        protected global::System.Web.UI.WebControls.Button ButtonVote;
     }
 }
